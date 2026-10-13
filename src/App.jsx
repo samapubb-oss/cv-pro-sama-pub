@@ -534,14 +534,14 @@ export default function App() {
         <section
           id="hero"
           ref={heroRef}
-          className="relative min-h-[100dvh] pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 flex flex-col justify-center items-center text-center overflow-hidden max-w-full"
+          className="relative min-h-[100dvh] pt-20 sm:pt-28 pb-10 sm:pb-16 px-4 sm:px-6 flex flex-col justify-center items-center text-center overflow-hidden max-w-full"
         >
           {/* Subtle glowing ring decoration behind hero */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] md:w-[750px] h-[300px] sm:h-[500px] md:h-[750px] rounded-full border border-accent/10 pointer-events-none -z-10 animate-pulse-subtle"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] sm:w-[350px] md:w-[520px] h-[220px] sm:h-[350px] md:h-[520px] rounded-full border border-accent/20 pointer-events-none -z-10"></div>
 
           {/* Availability Badge */}
-          <div className="hero-badge inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-surface/90 border border-accent/30 backdrop-blur-md mb-6 sm:mb-8 shadow-glow-sm max-w-[95%]">
+          <div className="hero-badge inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-surface/90 border border-accent/30 backdrop-blur-md mb-4 sm:mb-6 shadow-glow-sm max-w-[95%]">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emeraldAccent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emeraldAccent"></span>
@@ -552,7 +552,7 @@ export default function App() {
           </div>
 
           {/* Profile Photo / Avatar */}
-          <div className="hero-avatar relative mb-5 sm:mb-6 group cursor-pointer">
+          <div className="hero-avatar relative mb-4 sm:mb-5 group cursor-pointer">
             <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full p-[2.5px] sm:p-[3px] bg-gradient-to-tr from-accent via-cyanAccent to-accent-light shadow-glow hover:shadow-glow-lg transition-all duration-500">
               <div className="w-full h-full rounded-full overflow-hidden bg-surface relative">
                 <img
@@ -577,24 +577,24 @@ export default function App() {
           </div>
 
           {/* Name Header - Massif avec glow accent & responsive wrap */}
-          <div className="hero-title-name mb-2 sm:mb-3 max-w-full px-2">
+          <div className="hero-title-name mb-1.5 sm:mb-2 max-w-full px-2">
             <h1 className="font-sans font-extrabold tracking-tight text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-ghost text-glow break-words leading-tight">
               Abdou Lahat Diop
             </h1>
           </div>
 
           {/* Titre pro en Serif Italique Dramatique */}
-          <div className="hero-subtitle mb-6 sm:mb-8 max-w-2xl px-2">
+          <div className="hero-subtitle mb-4 sm:mb-6 max-w-2xl px-2">
             <p className="font-serif italic text-xl sm:text-2xl md:text-3xl lg:text-4xl text-accent-light/95 leading-snug tracking-wide">
               Agent Marketing Digital & Entrepreneur
             </p>
-            <p className="font-mono text-[11px] sm:text-xs md:text-sm text-muted mt-1.5 sm:mt-2 tracking-widest uppercase">
+            <p className="font-mono text-[11px] sm:text-xs md:text-sm text-muted mt-1 sm:mt-1.5 tracking-widest uppercase">
               Fondateur de l'agence Sama Pub — Dakar
             </p>
           </div>
 
           {/* Stats Bar en Monospace - Responsive flex/stack */}
-          <div className="hero-stats mb-8 sm:mb-10 w-full max-w-2xl px-2 sm:px-4">
+          <div className="hero-stats mb-6 sm:mb-8 w-full max-w-2xl px-2 sm:px-4">
             <div className="p-3 sm:p-3.5 rounded-2xl bg-surface/70 border border-white/5 backdrop-blur-md flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 font-mono text-[11px] sm:text-xs text-muted">
               <div className="flex items-center gap-2">
                 <Flame className="w-3.5 h-3.5 text-accent-light shrink-0" />
@@ -619,7 +619,7 @@ export default function App() {
               href="/cv-abdou-lahat-diop.pdf"
               download="CV-Abdou-Lahat-Diop.pdf"
               onClick={handleCvDownload}
-              className="btn-magnetic w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-full bg-gradient-to-r from-accent via-accent to-accent-dark text-white font-mono text-xs sm:text-sm font-semibold tracking-wide shadow-glow hover:shadow-glow-lg flex items-center justify-center gap-2.5 transition-all"
+              className="btn-magnetic w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-accent via-accent to-accent-dark text-white font-mono text-xs sm:text-sm font-semibold tracking-wide shadow-glow hover:shadow-glow-lg flex items-center justify-center gap-2.5 transition-all"
             >
               <Download className="w-4 h-4 shrink-0" />
               TÉLÉCHARGER LE CV
@@ -627,7 +627,7 @@ export default function App() {
 
             <a
               href="#contact"
-              className="btn-magnetic w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-full bg-surface/90 hover:bg-surfaceLight border border-accent/40 text-ghost font-mono text-xs sm:text-sm font-semibold tracking-wide hover:border-accent flex items-center justify-center gap-2.5 transition-all shadow-sm"
+              className="btn-magnetic w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full bg-surface/90 hover:bg-surfaceLight border border-accent/40 text-ghost font-mono text-xs sm:text-sm font-semibold tracking-wide hover:border-accent flex items-center justify-center gap-2.5 transition-all shadow-sm"
             >
               <MessageCircle className="w-4 h-4 text-accent-light shrink-0" />
               ME CONTACTER
@@ -637,7 +637,7 @@ export default function App() {
           {/* Scroll Down Indicator */}
           <a
             href="#about"
-            className="hero-scroll-indicator mt-10 sm:mt-16 text-muted hover:text-accent-light transition-colors flex flex-col items-center gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-[11px] tracking-widest"
+            className="hero-scroll-indicator mt-6 sm:mt-10 text-muted hover:text-accent-light transition-colors flex flex-col items-center gap-1 sm:gap-1.5 font-mono text-[10px] sm:text-[11px] tracking-widest"
           >
             <span>DÉCOUVRIR LE PARCOURS</span>
             <ChevronDown className="w-4 h-4 animate-bounce text-accent-light" />
@@ -645,26 +645,26 @@ export default function App() {
         </section>
 
         {/* C. SECTION À PROPOS — "Le Manifeste Personnel" */}
-        <section id="about" className="py-16 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto">
+        <section id="about" className="py-10 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto">
           {/* Section badge */}
-          <div className="flex items-center gap-2 mb-3 sm:mb-4">
+          <div className="flex items-center gap-2 mb-3">
             <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 01. MANIFESTE</span>
             <div className="h-[1px] w-12 bg-accent/40"></div>
           </div>
 
           {/* 2 colonnes avec ligne de séparation */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14 items-start">
             {/* Colonne Gauche : Titre Dramatique */}
-            <div className="about-left lg:col-span-5 flex flex-col gap-4 sm:gap-6">
+            <div className="about-left lg:col-span-5 flex flex-col gap-3.5 sm:gap-5">
               <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ghost leading-[1.15]">
                 Transformer l'attention en <span className="text-accent-light not-italic font-sans font-bold">croissance concrète.</span>
               </h2>
               <p className="font-mono text-xs text-muted leading-relaxed">
                 Une approche publicitaire moderne où la puissance de l'Intelligence Artificielle rencontre la réalité du marché ouest-africain.
               </p>
-              <div className="p-4 sm:p-5 rounded-2xl sm:rounded-[2rem] bg-surface/60 border border-white/5 backdrop-blur-md flex items-center gap-3.5 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center shrink-0">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-accent-light" />
+              <div className="p-3.5 sm:p-4 rounded-2xl sm:rounded-[2rem] bg-surface/60 border border-white/5 backdrop-blur-md flex items-center gap-3.5">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center shrink-0">
+                  <Sparkles className="w-5 h-5 text-accent-light" />
                 </div>
                 <div>
                   <h4 className="font-bold text-xs sm:text-sm text-ghost">Sama Pub — Dakar</h4>
@@ -677,7 +677,7 @@ export default function App() {
             <div className="hidden lg:block w-[1px] bg-gradient-to-b from-accent/0 via-accent/30 to-accent/0 h-full"></div>
 
             {/* Colonne Droite : Le Texte du Parcours */}
-            <div className="about-right lg:col-span-6 flex flex-col gap-4 sm:gap-6 text-muted text-sm sm:text-base md:text-lg leading-relaxed font-normal">
+            <div className="about-right lg:col-span-6 flex flex-col gap-3.5 sm:gap-5 text-muted text-sm sm:text-base md:text-lg leading-relaxed font-normal">
               <p className="text-ghost font-medium text-base sm:text-lg md:text-xl leading-relaxed">
                 Je suis <span className="text-accent-light font-bold">Abdou Lahat Diop</span>, agent marketing digital et fondateur de l'agence <span className="text-ghost font-semibold">Sama Pub</span> à Dakar.
               </p>
@@ -694,55 +694,55 @@ export default function App() {
           </div>
 
           {/* Cartes Métriques Clés */}
-          <div className="stats-grid grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mt-12 sm:mt-16">
-            <div className="stat-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-[2rem] text-center flex flex-col items-center">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-accent/15 flex items-center justify-center text-accent-light mb-2 sm:mb-3">
+          <div className="stats-grid grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5 mt-8 sm:mt-10">
+            <div className="stat-card glass-panel glass-panel-hover p-4 sm:p-5 rounded-2xl sm:rounded-[2rem] text-center flex flex-col items-center">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-accent/15 flex items-center justify-center text-accent-light mb-2">
                 <Flame className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div className="font-sans font-extrabold text-2xl sm:text-3xl md:text-4xl text-ghost text-glow">100+</div>
               <div className="font-mono text-[10px] sm:text-xs text-muted mt-1 uppercase tracking-wider">Clients Accompagnés</div>
-              <span className="text-[10px] sm:text-[11px] text-muted/70 mt-0.5 sm:mt-1">Commerces, Optique, Immo</span>
+              <span className="text-[10px] sm:text-[11px] text-muted/70 mt-0.5">Commerces, Optique, Immo</span>
             </div>
 
-            <div className="stat-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-[2rem] text-center flex flex-col items-center">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-cyanAccent/15 flex items-center justify-center text-cyanAccent mb-2 sm:mb-3">
+            <div className="stat-card glass-panel glass-panel-hover p-4 sm:p-5 rounded-2xl sm:rounded-[2rem] text-center flex flex-col items-center">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-cyanAccent/15 flex items-center justify-center text-cyanAccent mb-2">
                 <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div className="font-sans font-extrabold text-2xl sm:text-3xl md:text-4xl text-ghost text-glow-cyan">3.8x</div>
               <div className="font-mono text-[10px] sm:text-xs text-muted mt-1 uppercase tracking-wider">ROAS Moyen Meta Ads</div>
-              <span className="text-[10px] sm:text-[11px] text-muted/70 mt-0.5 sm:mt-1">Rentabilité maximisée</span>
+              <span className="text-[10px] sm:text-[11px] text-muted/70 mt-0.5">Rentabilité maximisée</span>
             </div>
 
-            <div className="stat-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-[2rem] text-center flex flex-col items-center">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-accent/15 flex items-center justify-center text-accent-light mb-2 sm:mb-3">
+            <div className="stat-card glass-panel glass-panel-hover p-4 sm:p-5 rounded-2xl sm:rounded-[2rem] text-center flex flex-col items-center">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-accent/15 flex items-center justify-center text-accent-light mb-2">
                 <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div className="font-sans font-extrabold text-2xl sm:text-3xl md:text-4xl text-ghost text-glow">FR & WO</div>
               <div className="font-mono text-[10px] sm:text-xs text-muted mt-1 uppercase tracking-wider">Voix Off Bilingues</div>
-              <span className="text-[10px] sm:text-[11px] text-muted/70 mt-0.5 sm:mt-1">Impact local au Sénégal</span>
+              <span className="text-[10px] sm:text-[11px] text-muted/70 mt-0.5">Impact local au Sénégal</span>
             </div>
 
-            <div className="stat-card glass-panel glass-panel-hover p-4 sm:p-6 rounded-2xl sm:rounded-[2rem] text-center flex flex-col items-center">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-emeraldAccent/15 flex items-center justify-center text-emeraldAccent mb-2 sm:mb-3">
+            <div className="stat-card glass-panel glass-panel-hover p-4 sm:p-5 rounded-2xl sm:rounded-[2rem] text-center flex flex-col items-center">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-emeraldAccent/15 flex items-center justify-center text-emeraldAccent mb-2">
                 <Video className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div className="font-sans font-extrabold text-2xl sm:text-3xl md:text-4xl text-ghost">100%</div>
               <div className="font-mono text-[10px] sm:text-xs text-muted mt-1 uppercase tracking-wider">Publicités par IA</div>
-              <span className="text-[10px] sm:text-[11px] text-muted/70 mt-0.5 sm:mt-1">Production ultra-rapide</span>
+              <span className="text-[10px] sm:text-[11px] text-muted/70 mt-0.5">Production ultra-rapide</span>
             </div>
           </div>
         </section>
 
         {/* D. EXPÉRIENCE — "La Timeline Vivante" */}
-        <section id="experience" className="py-16 sm:py-28 px-4 sm:px-6 max-w-5xl mx-auto relative">
-          <div className="flex items-center gap-2 mb-3 sm:mb-4 justify-center">
+        <section id="experience" className="py-10 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto relative">
+          <div className="flex items-center gap-2 mb-2 justify-center">
             <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 02. PARCOURS & EXPÉRIENCES</span>
           </div>
 
-          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-3 sm:mb-4">
+          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-2 sm:mb-3">
             La Timeline <span className="not-italic font-sans font-bold text-accent-light">Professionnelle</span>
           </h2>
-          <p className="font-mono text-xs sm:text-sm text-muted text-center max-w-xl mx-auto mb-12 sm:mb-20 px-2">
+          <p className="font-mono text-xs sm:text-sm text-muted text-center max-w-xl mx-auto mb-8 sm:mb-12 px-2">
             Une trajectoire orientée résultats, de la création de contenus innovants à la direction d'une agence digitale reconnue.
           </p>
 
@@ -752,7 +752,7 @@ export default function App() {
             <div className="absolute left-3.5 sm:left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent/20 via-accent to-accent/20 -translate-x-1/2"></div>
 
             {/* Carte 1 : Fondateur Sama Pub */}
-            <div className="timeline-card relative mb-10 sm:mb-16 md:mb-24 flex flex-col md:flex-row items-start">
+            <div className="timeline-card relative mb-6 sm:mb-8 md:mb-12 flex flex-col md:flex-row items-start">
               {/* Point sur la timeline */}
               <div className="absolute left-3.5 sm:left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-void border-2 border-accent flex items-center justify-center z-10 shadow-glow">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-accent-light animate-ping"></div>
@@ -760,19 +760,19 @@ export default function App() {
 
               {/* Contenu - Gauche sur Desktop, décalé propre sur mobile */}
               <div className="ml-8 sm:ml-12 md:ml-0 md:w-1/2 md:pr-10 text-left w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-1/2">
-                <div className="glass-panel glass-panel-hover p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden">
-                  <div className="inline-block font-mono text-[10px] sm:text-xs text-accent-light px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-accent/15 border border-accent/30 mb-2.5 sm:mb-3 font-semibold">
+                <div className="glass-panel glass-panel-hover p-4 sm:p-5 md:p-7 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden">
+                  <div className="inline-block font-mono text-[10px] sm:text-xs text-accent-light px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-accent/15 border border-accent/30 mb-2 font-semibold">
                     2023 — PRÉSENT
                   </div>
                   <h3 className="font-sans font-bold text-base sm:text-lg md:text-xl text-ghost mb-1">
                     Fondateur & Directeur Marketing Digital
                   </h3>
-                  <div className="font-mono text-xs text-muted mb-3 sm:mb-4 flex items-center gap-1.5 sm:gap-2">
+                  <div className="font-mono text-xs text-muted mb-2.5 sm:mb-3 flex items-center gap-1.5 sm:gap-2">
                     <span className="text-cyanAccent font-semibold">Sama Pub</span>
                     <span>•</span>
                     <span>Dakar, Sénégal</span>
                   </div>
-                  <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  <p className="text-muted text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
                     Direction globale de l'agence. Création et déploiement de vidéos publicitaires générées par IA pour plus de 100 entreprises (commerces, opticiens, garages, restaurants, immobilier). Lancement et optimisation de campagnes Facebook Ads à fort retour sur investissement.
                   </p>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -787,7 +787,7 @@ export default function App() {
             </div>
 
             {/* Carte 2 : Spécialiste Vidéos IA & Motion */}
-            <div className="timeline-card relative mb-10 sm:mb-16 md:mb-24 flex flex-col md:flex-row items-start md:justify-end">
+            <div className="timeline-card relative mb-6 sm:mb-8 md:mb-12 flex flex-col md:flex-row items-start md:justify-end">
               {/* Point sur la timeline */}
               <div className="absolute left-3.5 sm:left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-void border-2 border-cyanAccent flex items-center justify-center z-10 shadow-glow-cyan">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-cyanAccent"></div>
@@ -795,19 +795,19 @@ export default function App() {
 
               {/* Contenu - Droite sur Desktop */}
               <div className="ml-8 sm:ml-12 md:ml-0 md:w-1/2 md:pl-10 text-left w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-1/2">
-                <div className="glass-panel glass-panel-hover p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden">
-                  <div className="inline-block font-mono text-[10px] sm:text-xs text-cyanAccent px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-cyanAccent/15 border border-cyanAccent/30 mb-2.5 sm:mb-3 font-semibold">
+                <div className="glass-panel glass-panel-hover p-4 sm:p-5 md:p-7 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden">
+                  <div className="inline-block font-mono text-[10px] sm:text-xs text-cyanAccent px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-cyanAccent/15 border border-cyanAccent/30 mb-2 font-semibold">
                     2022 — 2023
                   </div>
                   <h3 className="font-sans font-bold text-base sm:text-lg md:text-xl text-ghost mb-1">
                     Spécialiste Vidéos Publicitaires IA & Motion
                   </h3>
-                  <div className="font-mono text-xs text-muted mb-3 sm:mb-4 flex items-center gap-1.5 sm:gap-2">
+                  <div className="font-mono text-xs text-muted mb-2.5 sm:mb-3 flex items-center gap-1.5 sm:gap-2">
                     <span className="text-accent-light font-semibold">Studio & Partenariats Digitaux</span>
                     <span>•</span>
                     <span>Freelance & Conseil</span>
                   </div>
-                  <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  <p className="text-muted text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
                     Production créative pionnière avec les technologies d'IA générative (Midjourney, Runway, Kling, HeyGen). Écriture de scripts publicitaires dynamiques et synthèse vocale de voix off adaptées au contexte culturel local, avec un gain de temps de production de plus de 80%.
                   </p>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -830,19 +830,19 @@ export default function App() {
 
               {/* Contenu - Gauche sur Desktop */}
               <div className="ml-8 sm:ml-12 md:ml-0 md:w-1/2 md:pr-10 text-left w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-1/2">
-                <div className="glass-panel glass-panel-hover p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden">
-                  <div className="inline-block font-mono text-[10px] sm:text-xs text-accent-light px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-accent/15 border border-accent/30 mb-2.5 sm:mb-3 font-semibold">
+                <div className="glass-panel glass-panel-hover p-4 sm:p-5 md:p-7 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden">
+                  <div className="inline-block font-mono text-[10px] sm:text-xs text-accent-light px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-accent/15 border border-accent/30 mb-2 font-semibold">
                     2021 — 2022
                   </div>
                   <h3 className="font-sans font-bold text-base sm:text-lg md:text-xl text-ghost mb-1">
                     Media Buyer & Consultant Meta Ads
                   </h3>
-                  <div className="font-mono text-xs text-muted mb-3 sm:mb-4 flex items-center gap-1.5 sm:gap-2">
+                  <div className="font-mono text-xs text-muted mb-2.5 sm:mb-3 flex items-center gap-1.5 sm:gap-2">
                     <span className="text-ghost font-semibold">Accompagnement PME & Artisans</span>
                     <span>•</span>
                     <span>Sénégal</span>
                   </div>
-                  <p className="text-muted text-xs sm:text-sm leading-relaxed mb-4">
+                  <p className="text-muted text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
                     Gestion de budgets publicitaires sur Meta Ads Manager. Ciblage d'audiences locales par centres d'intérêt et géolocalisation, tests A/B de formats vidéos vs carrousels, et suivi strict du coût par contact (CPL) pour garantir la rentabilité des investissements.
                   </p>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -859,20 +859,20 @@ export default function App() {
         </section>
 
         {/* E. COMPÉTENCES — "Le Tableau de Bord" */}
-        <section id="skills" className="py-16 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto">
-          <div className="flex items-center gap-2 mb-3 sm:mb-4 justify-center">
+        <section id="skills" className="py-10 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 mb-2 justify-center">
             <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 03. TABLEAU DE BORD TECHNIQUE</span>
           </div>
 
-          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-3 sm:mb-4">
+          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-2 sm:mb-3">
             Matrice des <span className="not-italic font-sans font-bold text-accent-light">Compétences Clés</span>
           </h2>
-          <p className="font-mono text-xs sm:text-sm text-muted text-center max-w-xl mx-auto mb-12 sm:mb-16 px-2">
+          <p className="font-mono text-xs sm:text-sm text-muted text-center max-w-xl mx-auto mb-8 sm:mb-10 px-2">
             Une expertise éprouvée sur le terrain, alliant maîtrise des outils d'avant-garde et sens aigu du business local.
           </p>
 
           {/* Grille de Maîtrise avec jauges circulaires SVG animées */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8 sm:mb-10">
             {skillsData.map((skill, index) => {
               const radius = 36;
               const circumference = 2 * Math.PI * radius;
@@ -1029,16 +1029,16 @@ export default function App() {
         </section>
 
         {/* F. FORMATION — "Les Fondations" */}
-        <section id="education" className="py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 mb-3 sm:mb-4 justify-center">
+        <section id="education" className="py-10 sm:py-14 px-4 sm:px-6 max-w-4xl mx-auto">
+          <div className="flex items-center gap-2 mb-2 justify-center">
             <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 04. FORMATION & CERTIFICATIONS</span>
           </div>
 
-          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-10 sm:mb-16">
+          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-6 sm:mb-8">
             Les Fondations & <span className="not-italic font-sans font-bold text-accent-light">Certifications</span>
           </h2>
 
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-3 sm:space-y-4">
             {[
               {
                 year: "2023 — 2024",
@@ -1088,15 +1088,15 @@ export default function App() {
         </section>
 
         {/* G. CONTACT — "Le Pont" */}
-        <section id="contact" className="py-16 sm:py-28 px-4 sm:px-6 max-w-5xl mx-auto">
-          <div className="contact-element flex items-center gap-2 mb-3 sm:mb-4 justify-center">
+        <section id="contact" className="py-10 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+          <div className="contact-element flex items-center gap-2 mb-2 justify-center">
             <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 05. CONTACT & COLLABORATION</span>
           </div>
 
-          <h2 className="contact-element font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center text-ghost mb-3 sm:mb-4 leading-tight">
+          <h2 className="contact-element font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center text-ghost mb-2 sm:mb-3 leading-tight">
             Travaillons ensemble sur <span className="not-italic font-sans font-bold text-accent-light">votre succès.</span>
           </h2>
-          <p className="contact-element font-mono text-xs sm:text-sm text-muted text-center max-w-lg mx-auto mb-12 sm:mb-16 px-2">
+          <p className="contact-element font-mono text-xs sm:text-sm text-muted text-center max-w-lg mx-auto mb-8 sm:mb-10 px-2">
             Besoin d'une vidéo publicitaire percutante par IA ou d'une campagne Facebook Ads qui génère des ventes ? Parlons de votre projet dès aujourd'hui.
           </p>
 
@@ -1289,7 +1289,7 @@ export default function App() {
       </main>
 
       {/* H. PIED DE PAGE — "La Clôture" */}
-      <footer className="mt-16 sm:mt-20 border-t border-accent/15 bg-[#06060E] rounded-t-[2rem] sm:rounded-t-[3rem] md:rounded-t-[4rem] px-4 sm:px-6 py-10 sm:py-14">
+      <footer className="mt-8 sm:mt-12 border-t border-accent/15 bg-[#06060E] rounded-t-[2rem] sm:rounded-t-[3rem] md:rounded-t-[4rem] px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left">
           {/* Logo & Mentions */}
           <div className="space-y-2">
