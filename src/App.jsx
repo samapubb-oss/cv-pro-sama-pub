@@ -12,7 +12,6 @@ import {
   TrendingUp,
   Video,
   Layers,
-  Award,
   CheckCircle2,
   Clock,
   ArrowUpRight,
@@ -237,18 +236,22 @@ export default function App() {
         ease: 'power3.out'
       });
 
-      gsap.from('.skill-card', {
-        scrollTrigger: {
-          trigger: '#skills',
-          start: 'top 80%',
-          toggleActions: 'play none none none'
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.1,
-        ease: 'power3.out'
-      });
+      gsap.fromTo(
+        '.skill-card',
+        { y: 20 },
+        {
+          y: 0,
+          duration: 0.5,
+          stagger: 0.08,
+          ease: 'power2.out',
+          clearProps: 'transform',
+          scrollTrigger: {
+            trigger: '#skills',
+            start: 'top 95%',
+            once: true
+          }
+        }
+      );
 
       // Counters
       const counters = document.querySelectorAll('.skill-percentage');
@@ -271,19 +274,6 @@ export default function App() {
         );
       });
 
-      gsap.from('.education-card', {
-        scrollTrigger: {
-          trigger: '#education',
-          start: 'top 85%',
-          toggleActions: 'play none none none'
-        },
-        y: 25,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.12,
-        ease: 'power3.out'
-      });
-
       gsap.from('.contact-element', {
         scrollTrigger: {
           trigger: '#contact',
@@ -294,8 +284,12 @@ export default function App() {
         opacity: 0,
         duration: 0.7,
         stagger: 0.1,
-        ease: 'power3.out'
+        ease: 'power3.out',
+        clearProps: 'all'
       });
+
+      // Recalculate ScrollTrigger positions to prevent invisible elements
+      setTimeout(() => ScrollTrigger.refresh(), 150);
 
     }, containerRef);
 
@@ -420,9 +414,6 @@ export default function App() {
           <a href="#skills" className="link-lift text-muted hover:text-accent-light transition-colors">
             // COMPÉTENCES
           </a>
-          <a href="#education" className="link-lift text-muted hover:text-accent-light transition-colors">
-            // FORMATION
-          </a>
           <a href="#contact" className="link-lift text-muted hover:text-accent-light transition-colors">
             // CONTACT
           </a>
@@ -491,18 +482,11 @@ export default function App() {
                 // 03. COMPÉTENCES
               </a>
               <a
-                href="#education"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2.5 px-4 rounded-xl bg-surface/80 border border-white/5 text-ghost hover:text-accent-light hover:border-accent/40 transition-colors"
-              >
-                // 04. FORMATION
-              </a>
-              <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2.5 px-4 rounded-xl bg-surface/80 border border-white/5 text-ghost hover:text-accent-light hover:border-accent/40 transition-colors"
               >
-                // 05. CONTACT DIRECT
+                // 04. CONTACT DIRECT
               </a>
             </nav>
 
@@ -859,20 +843,20 @@ export default function App() {
         </section>
 
         {/* E. COMPÉTENCES — "Le Tableau de Bord" */}
-        <section id="skills" className="py-10 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto">
-          <div className="flex items-center gap-2 mb-2 justify-center">
+        <section id="skills" className="pt-8 sm:pt-10 pb-1 sm:pb-2 px-4 sm:px-6 max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 mb-1.5 justify-center">
             <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 03. TABLEAU DE BORD TECHNIQUE</span>
           </div>
 
-          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-2 sm:mb-3">
+          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-2">
             Matrice des <span className="not-italic font-sans font-bold text-accent-light">Compétences Clés</span>
           </h2>
-          <p className="font-mono text-xs sm:text-sm text-muted text-center max-w-xl mx-auto mb-8 sm:mb-10 px-2">
+          <p className="font-mono text-xs sm:text-sm text-muted text-center max-w-xl mx-auto mb-3.5 sm:mb-4 px-2">
             Une expertise éprouvée sur le terrain, alliant maîtrise des outils d'avant-garde et sens aigu du business local.
           </p>
 
           {/* Grille de Maîtrise avec jauges circulaires SVG animées */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8 sm:mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 mb-4 sm:mb-5">
             {skillsData.map((skill, index) => {
               const radius = 36;
               const circumference = 2 * Math.PI * radius;
@@ -881,7 +865,7 @@ export default function App() {
               return (
                 <div
                   key={index}
-                  className="skill-card glass-panel glass-panel-hover p-5 sm:p-6 md:p-7 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] flex flex-col justify-between"
+                  className="skill-card glass-panel glass-panel-hover p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl flex flex-col justify-between"
                 >
                   <div>
                     {/* Header card with category & circular progress */}
@@ -922,7 +906,7 @@ export default function App() {
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center">
                           <span className="font-mono text-[11px] sm:text-xs font-bold text-ghost">
-                            <span className="skill-percentage" data-target={skill.level}>0</span>%
+                            <span className="skill-percentage" data-target={skill.level}>{skill.level}</span>%
                           </span>
                         </div>
                       </div>
@@ -949,7 +933,7 @@ export default function App() {
             })}
 
             {/* Radar / Cyber Dashboard Visual Card */}
-            <div className="skill-card glass-panel glass-panel-hover p-5 sm:p-6 md:p-7 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] flex flex-col justify-between lg:col-span-1 border-accent/40 bg-surfaceLight/50">
+            <div className="skill-card glass-panel glass-panel-hover p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl flex flex-col justify-between lg:col-span-1 border-accent/40 bg-surfaceLight/50">
               <div>
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <span className="font-mono text-[10px] sm:text-[11px] text-cyanAccent uppercase tracking-wider px-2.5 py-1 rounded-full bg-cyanAccent/10 border border-cyanAccent/25">
@@ -998,8 +982,8 @@ export default function App() {
           </div>
 
           {/* Outils & Technologies utilisés */}
-          <div className="p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2.5rem] md:rounded-[3rem] bg-surface/50 border border-white/5 backdrop-blur-md">
-            <h4 className="font-mono text-[11px] sm:text-xs text-muted uppercase tracking-widest text-center mb-4 sm:mb-6">
+          <div className="p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl bg-surface/50 border border-white/5 backdrop-blur-md">
+            <h4 className="font-mono text-[11px] sm:text-xs text-muted uppercase tracking-widest text-center mb-3 sm:mb-4">
               // ARSENAL LOGICIEL & TECHNOLOGIES DU QUOTIDIEN
             </h4>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
@@ -1028,75 +1012,16 @@ export default function App() {
           </div>
         </section>
 
-        {/* F. FORMATION — "Les Fondations" */}
-        <section id="education" className="py-10 sm:py-14 px-4 sm:px-6 max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 mb-2 justify-center">
-            <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 04. FORMATION & CERTIFICATIONS</span>
+        {/* F. CONTACT — "Le Pont" (Module 04) */}
+        <section id="contact" className="pt-4 sm:pt-6 pb-10 sm:pb-14 px-4 sm:px-6 max-w-5xl mx-auto">
+          <div className="contact-element flex items-center gap-2 mb-1 justify-center">
+            <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 04. CONTACT & COLLABORATION</span>
           </div>
 
-          <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-center text-ghost mb-6 sm:mb-8">
-            Les Fondations & <span className="not-italic font-sans font-bold text-accent-light">Certifications</span>
-          </h2>
-
-          <div className="space-y-3 sm:space-y-4">
-            {[
-              {
-                year: "2023 — 2024",
-                title: "Spécialisation IA Générative Vidéo & Direction Publicitaire",
-                institution: "Programme de Formation Continue & Pratique Studio Sama Pub",
-                desc: "Maîtrise approfondie des flux de prompts vidéo (Runway Gen-3, Kling, Midjourney) et synchronisation vocale multilingue pour la publicité commerciale."
-              },
-              {
-                year: "2022 — 2023",
-                title: "Certification Meta Media Buying Professional & Digital Marketing",
-                institution: "Meta Blueprint & Programmes Spécialisés",
-                desc: "Certification des compétences en structuration de campagnes publicitaires Facebook/Instagram, optimisation des enchères et mesure du ROAS."
-              },
-              {
-                year: "2020 — 2022",
-                title: "Formation en Stratégie Marketing & Développement Commercial",
-                institution: "Institut de Formation Commerciale & Pratique de Marché — Dakar",
-                desc: "Fondamentaux du marketing opérationnel, négociation client, psychologie du consommateur et gestion de projet entrepreneurial."
-              }
-            ].map((edu, idx) => (
-              <div
-                key={idx}
-                className="education-card glass-panel glass-panel-hover p-4 sm:p-6 md:p-7 rounded-2xl sm:rounded-[2rem] flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4"
-              >
-                <div className="flex-1">
-                  <div className="inline-block font-mono text-[10px] sm:text-xs text-accent-light px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-accent/10 border border-accent/20 mb-2">
-                    {edu.year}
-                  </div>
-                  <h3 className="font-sans font-bold text-base sm:text-lg text-ghost">
-                    {edu.title}
-                  </h3>
-                  <p className="font-mono text-xs text-cyanAccent mt-0.5 sm:mt-1 mb-1.5 sm:mb-2">
-                    {edu.institution}
-                  </p>
-                  <p className="text-muted text-xs leading-relaxed max-w-2xl">
-                    {edu.desc}
-                  </p>
-                </div>
-                <div className="shrink-0 self-start sm:self-center">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-surfaceLight border border-white/5 flex items-center justify-center text-accent-light">
-                    <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* G. CONTACT — "Le Pont" */}
-        <section id="contact" className="py-10 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
-          <div className="contact-element flex items-center gap-2 mb-2 justify-center">
-            <span className="font-mono text-xs text-accent-light tracking-widest uppercase">// 05. CONTACT & COLLABORATION</span>
-          </div>
-
-          <h2 className="contact-element font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center text-ghost mb-2 sm:mb-3 leading-tight">
+          <h2 className="contact-element font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center text-ghost mb-1.5 sm:mb-2 leading-tight">
             Travaillons ensemble sur <span className="not-italic font-sans font-bold text-accent-light">votre succès.</span>
           </h2>
-          <p className="contact-element font-mono text-xs sm:text-sm text-muted text-center max-w-lg mx-auto mb-8 sm:mb-10 px-2">
+          <p className="contact-element font-mono text-xs sm:text-sm text-muted text-center max-w-lg mx-auto mb-4 sm:mb-5 px-2">
             Besoin d'une vidéo publicitaire percutante par IA ou d'une campagne Facebook Ads qui génère des ventes ? Parlons de votre projet dès aujourd'hui.
           </p>
 

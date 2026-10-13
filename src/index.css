@@ -108,3 +108,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #7B61FF;
 }
+
+/* Guarantee cards visibility against GSAP scrolltrigger race conditions */
+.skill-card {
+  opacity: 1 !important;
+}
