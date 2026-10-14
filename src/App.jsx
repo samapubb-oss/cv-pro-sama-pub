@@ -5,31 +5,20 @@ import confetti from 'canvas-confetti';
 import {
   Download,
   Mail,
-  Phone,
   MapPin,
   MessageCircle,
   Sparkles,
   TrendingUp,
   Video,
-  Layers,
-  CheckCircle2,
-  Clock,
-  ArrowUpRight,
-  ChevronDown,
-  Play,
   Flame,
-  Zap,
   Send,
-  Globe,
   Bot,
-  BarChart3,
   Check,
-  Eye,
   FileText,
-  UserCheck,
   Volume2,
   Menu,
-  X
+  X,
+  ChevronDown
 } from 'lucide-react';
 
 function FacebookIcon({ className = "w-4 h-4" }) {
